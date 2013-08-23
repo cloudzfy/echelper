@@ -1,0 +1,56 @@
+﻿.emergency section[role=main] {
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .homepage section[role=main] {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (-ms-view-state: portrait) {
+    .homepage section[role=main] {
+        margin-left: 100px;
+    }
+}
+
+#mapdiv 
+{
+    width:61.11%; 
+    height:78.95%; 
+    position:fixed;
+    left: 120px;
+}
+
+#doctorSelection {
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+    width: 70%;
+    height:70%;
+    position:fixed;
+}
+
+.mediumListIconTextItem
+{
+    height: 70px;
+    padding: 5px;
+    overflow: hidden;
+    display: -ms-grid;
+}
+
+    .mediumListIconTextItem img.mediumListIconTextItem-Image 
+    {
+        width: 60px;
+        height: 60px;
+        margin: 5px;
+        -ms-grid-column: 1;
+    }
+
+    .mediumListIconTextItem .mediumListIconTextItem-Detail
+    {
+        margin: 5px;
+        -ms-grid-column: 2;
+    }
+
+#doctorSelection {
+    height: 100%;
+}
