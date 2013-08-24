@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="ImagineCupCloud" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="1" osVersion="*">
+  <Role name="ImagineCupServer">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="StorageAccountConnectionString" value="DefaultEndpointsProtocol=https;AccountName=echelperspace;AccountKey=XCG9aUPb51wZYysVkSLlfxoxgKlm/5OqXyKh2Cjbrxhbf/Bm+LsGmdEYcAvc4zWd7wey6RTQboxylo41s3WUpw==" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>
