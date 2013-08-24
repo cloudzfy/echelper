@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Echelper by cloudzfy</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Echelper</h1>
+        <p>An Open Source Mobile Medical System</p>
+
+        <p class="view"><a href="https://github.com/cloudzfy/echelper">View the Project on GitHub <small>cloudzfy/echelper</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/cloudzfy/echelper/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/cloudzfy/echelper/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/cloudzfy/echelper">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="welcome-to-echelper" class="anchor" href="#welcome-to-echelper"><span class="octicon octicon-link"></span></a>Welcome to ECHelper</h1>
+
+<blockquote>
+<p>Note: This project is awarded prize in Imagine Cup 2012 Software Challenge.
+<img src="https://raw.github.com/wiki/cloudzfy/echelper/images/imagine_cup.png" alt="Imagine Cup 2012"></p>
+</blockquote>
+
+<p><em>Abstract --</em> Nowadays, cardiovascular disease is the major cause of premature death in many countries. An efficient way to monitor and treat the disease is extremely necessary for the whole world. ECHelper is trying to provide a mode that makes the monitoring and treatment low-priced and prompt. By getting the electrocardio data, ECHelper will provide the patient’s detail information to a specific doctor in time. So it can efficiently solve the problem about a lack of enough characteristics of cardiovascular disease exactly. With Cloud Computing, some specific electrocardio data will be stored in the Cloud, which help each doctor to obtain a diagnosis precisely. GPS will be used to accurately locate the position of patient in case of emergency.</p>
+
+<p><em>Index Terms --</em> Health, ECG, CVD, Windows 8, Windows Phone, Windows Azure, WCF, Bing Maps</p>
+
+<h2>
+<a name="summary" class="anchor" href="#summary"><span class="octicon octicon-link"></span></a>Summary</h2>
+
+<p>Nowadays, cardiovascular disease is the first killer in the world. An efficient way to monitor and treat the disease is extremely necessary for the whole world. <strong>ECHelper</strong> is trying to provide a mode that makes the monitoring and treatment low-priced.</p>
+
+<p><img src="https://raw.github.com/wiki/cloudzfy/echelper/images/summerize.png" alt="Summary"></p>
+
+<p>By getting the electrocardio data, ECHelper will give the patient’s detail information to a particular doctor in time. So it can efficiently solve the problem about a lack of enough characteristics of cardiovascular disease exactly.</p>
+
+<p>With Cloud Computing, some specific electrocardio data will be stored in the Cloud, which help each doctor to make a diagnosis precisely. GPS will be used to accurately locate the position of patient in case of emergency.</p>
+
+<h2>
+<a name="background" class="anchor" href="#background"><span class="octicon octicon-link"></span></a>Background</h2>
+
+<h3>
+<a name="data" class="anchor" href="#data"><span class="octicon octicon-link"></span></a>Data</h3>
+
+<p>According to a report of WHO on September 29th, 2011, <a href="http://www.who.int/cardiovascular_diseases/">http://www.who.int/cardiovascular_diseases/</a></p>
+
+<p><img src="https://raw.github.com/wiki/cloudzfy/echelper/images/background.png" alt="Background"></p>
+
+<p>Members of the UN General Assembly in 2011 resolved to emphasize public awareness of this health risk in their home countries and advocate healthier lifestyles that can prevent cardiovascular diseases.</p>
+
+<p>More than <strong>70%</strong> of cardiovascular disease deaths happened out of hospital, especially in the place where there is no doctor providing assistance.</p>
+
+<h3>
+<a name="user-group" class="anchor" href="#user-group"><span class="octicon octicon-link"></span></a>User Group</h3>
+
+<p>According to our survey, user groups of service providers distribute as the screen show. The number of authentication doctor in Sina Microblog is 593, and all user concerned about doctor is more than 1000. The number of authentication doctor in Tencent is 535. and all user concern about doctor is more than 18000.</p>
+
+<p><img src="https://raw.github.com/wiki/cloudzfy/echelper/images/user_group.png" alt="User Group"></p>
+
+<p>This shows that we have a large number of user groups in potential.</p>
+
+<h3>
+<a name="theme" class="anchor" href="#theme"><span class="octicon octicon-link"></span></a>Theme</h3>
+
+<p>Using ECHelper, patients can not only care about their cardiovascular disease and communicate with doctors at any time, but also get first aid if necessary.</p>
+
+<p><img src="https://raw.github.com/wiki/cloudzfy/echelper/images/theme.png" alt="Theme"></p>
+
+<p>ECHelper also provide convenience experience for non-patient population to care about their hearts. If ECHelper can be spread widely, it will make a great contribution for cardiovascular disease prevention and control, and achieve one of the Millennium development goals--combat HIV/AIDS, malaria and other diseases.</p>
+
+<h3>
+<a name="interview" class="anchor" href="#interview"><span class="octicon octicon-link"></span></a>Interview</h3>
+
+<p>In the meantime, we have made an interview of a medical professor from Guangdong Medical College. Let’s have a watch the video.</p>
+
+<p><a href="http://www.youtube.com/watch?v=1e3o3-vTJgE">http://www.youtube.com/watch?v=1e3o3-vTJgE</a></p>
+
+<h2>
+<a name="architecture--technology" class="anchor" href="#architecture--technology"><span class="octicon octicon-link"></span></a>Architecture &amp; Technology</h2>
+
+<h3>
+<a name="architecture" class="anchor" href="#architecture"><span class="octicon octicon-link"></span></a>Architecture</h3>
+
+<p><img src="https://raw.github.com/wiki/cloudzfy/echelper/images/architecture.png" alt="Architecture"></p>
+
+<p>The architecture of our solution has showed above. Two rich clients act as a patient and a doctor. We make use of Model-View-ViewModel? (MVVM) to implement these two. And we deploy our server in Windows Azure. We use Windows 8 as patient client and Windows Phone as doctor client, which communicate with WCF RIA Service. In addition, a ECG Sensor can be connected with Windows 8 Metro Style Application by a custom Windows Service to implement the data transfer between tablet PC and ECG Sensor by virtual Serial Port.</p>
+
+<p>The ECG data will be recorded in byte-stream file and upload to the Windows Azure that store in Blob, and provide download service to authorized users. Shared Access Signature is used to increase the security level of private data.</p>
+
+<p>Regular data will be stored in SQL Azure to keep data integrity and security. Between SQL Azure and WCF, we use ADO.NET to construct persistent object.</p>
+
+<p>In order to provide a more comfortable user experience and security level, we use Access Control Service to support various opportunities logining ways. Such as Windows Live, Google, Yahoo. Email address of user information is used to separate different users in our system.</p>
+
+<h3>
+<a name="technology" class="anchor" href="#technology"><span class="octicon octicon-link"></span></a>Technology</h3>
+
+<p>Technologies we used are shown below:</p>
+
+<p><img src="https://raw.github.com/wiki/cloudzfy/echelper/images/technology.png" alt="Technology"></p>
+
+<h2>
+<a name="main-scenarios" class="anchor" href="#main-scenarios"><span class="octicon octicon-link"></span></a>Main Scenarios</h2>
+
+<blockquote>
+<p>Our main scenarios contains: <strong>Outpatient Service</strong>, <strong>Emergency Service</strong>, <strong>Periphery Functions</strong>.</p>
+</blockquote>
+
+<p><img src="https://raw.github.com/wiki/cloudzfy/echelper/images/main_scenario.png" alt="Main Scenarios"></p>
+
+<h3>
+<a name="outpatient-service" class="anchor" href="#outpatient-service"><span class="octicon octicon-link"></span></a>Outpatient Service</h3>
+
+<p>In Outpatient Service, doctors could diagnose patients’ request in a mail form. In the mean time, patients could get help from doctor’s reply.</p>
+
+<h3>
+<a name="emergency-service" class="anchor" href="#emergency-service"><span class="octicon octicon-link"></span></a>Emergency Service</h3>
+
+<p>In Emergency Service, patients could get the first aid from doctors nearby.</p>
+
+<h3>
+<a name="periphery-functions" class="anchor" href="#periphery-functions"><span class="octicon octicon-link"></span></a>Periphery Functions</h3>
+
+<p>In Periphery Functions, all doctors should have a real name authentication from the hospital he works for or any other official organization. Both patients and doctors could review the authorized medical record.</p>
+
+<p><img src="https://raw.github.com/wiki/cloudzfy/echelper/images/patient_ui.png" alt="Patient UI"><img src="https://raw.github.com/wiki/cloudzfy/echelper/images/doctor_ui.png" alt="Doctor UI"></p>
+
+<h2>
+<a name="vision" class="anchor" href="#vision"><span class="octicon octicon-link"></span></a>Vision</h2>
+
+<p>Our aim is to build a new medical treatment model between patients and doctors, which provides a platform for patients to see a doctor conveniently and make doctors give help at the leisure time.</p>
+
+<p>With the development of mobile communication technology, mobile devices are more portable and intelligent with lower cost of integration. In the future, with the faster Internet access, mobile devices will play an important role in medical rescue. These changes will greatly promote the mobile medical care and the interests of network and telecommunication carriers.</p>
+
+<p><img src="https://raw.github.com/wiki/cloudzfy/echelper/images/vision.png" alt="Vision"></p>
+
+<p>In conclusion, <strong>ECHelper</strong> provides a direction to make full use of medical resources. This not only relieves the seriousness of seeing doctors in developing countries, but also provides more convenient routes to community medical service in developed countries.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/cloudzfy">cloudzfy</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
