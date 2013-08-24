@@ -1,0 +1,36 @@
+﻿.homepage section[role=main] {
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .homepage section[role=main] {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (-ms-view-state: portrait) {
+    .homepage section[role=main] {
+        margin-left: 100px;
+    }
+}
+
+#startdiv {
+    -ms-grid-row: 1;
+    margin-top: 13px;
+    width: 100px;
+    height: 100px;
+    background-image: url('/images/StartRecording.png');
+}
+
+#uploaddiv {
+    -ms-grid-row: 2;
+    width: 100px;
+    height: 100px;
+    background-image: url('/images/Upload.png');
+}
+
+#deletediv {
+    -ms-grid-row: 3;
+    width: 100px;
+    height: 100px;
+    background-image: url('/images/GiveUp.png');
+}
