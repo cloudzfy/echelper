@@ -1,0 +1,128 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="ECHelper2._0.DoctorInformation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" 
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False">
+
+
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+
+
+
+
+
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot" Background="#FF89C089">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel 包含应用程序的名称和页标题-->
+        <Image Height="27" Margin="0,0,-10,0" Source="title_bg.png" Stretch="Fill" VerticalAlignment="Top"/>
+
+        <!--TitlePanel 包含应用程序的名称和页标题-->
+        <StackPanel x:Name="TitlePanel" Margin="12,0,0,28" Height="133">
+            <TextBlock x:Name="ApplicationTitle" Text="ECHelper" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Personal Info" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - 在此处放置其他内容-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0"/>
+        <Grid Height="607" HorizontalAlignment="Left" Margin="12,0,0,0" x:Name="grid1" VerticalAlignment="Top" Width="456" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="142" />
+                <ColumnDefinition Width="314*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="72" />
+                <RowDefinition Height="0" />
+                <RowDefinition Height="180" />
+                <RowDefinition Height="72" />
+                <RowDefinition Height="32" />
+                <RowDefinition Height="72" />
+                <RowDefinition Height="72" />
+                <RowDefinition Height="67" />
+                <RowDefinition Height="0*" />
+                <RowDefinition Height="40*" />
+            </Grid.RowDefinitions>
+            <TextBlock Height="66" FontSize="32"  HorizontalAlignment="Right" x:Name="textBlock_Name" Text=" Name " VerticalAlignment="Bottom" Width="132" />
+            <TextBlock Grid.Row="2" Height="72" HorizontalAlignment="Left" x:Name="textBlock_ShortDescription" Text="  Description" FontSize="32" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="192" Margin="6,88,0,0" />
+            <TextBlock FontSize="32"  Grid.Column="1" Grid.Row="2" Height="69" HorizontalAlignment="Left" Margin="86,88,0,0" x:Name="TextBlock_Edit" Text="View and Edit" VerticalAlignment="Top" Width="217" Tap="Edit_Tap" />
+            <TextBlock Grid.Row="2" FontSize="32" Height="50" HorizontalAlignment="Right" x:Name="textBlock_Grade" Text=" Grade" VerticalAlignment="Top" Width="132" Margin="0,13,0,0" />
+            <TextBlock Grid.Row="5" FontSize="32" Height="50" HorizontalAlignment="Right" x:Name="textBlock_Phone" Text=" Phone " VerticalAlignment="Bottom" Width="132" Margin="0,0,0,9" />
+            <TextBlock Grid.Row="6" FontSize="32" Height="50" HorizontalAlignment="Right" x:Name="textBlock_Email" Text=" Email" VerticalAlignment="Bottom" Width="132" Margin="0,0,0,9" />
+            <!--这个才是真的，下面那行是假的！！！！！永远记住 <TextBox Grid.Column="1" Height="72" HorizontalAlignment="Left" Margin="0,-2,0,0" x:Name="textBox_Name" Text="Enter your name"  VerticalAlignment="Top" Width="314" GotFocus="GF_Name" LostFocus="LF_Name" />-->
+            <TextBox Grid.Column="1" Height="72" HorizontalAlignment="Left" Margin="0,-2,0,0" x:Name="textBox_Name" Text=""  VerticalAlignment="Top" Width="314" GotFocus="GF_Name" LostFocus="LF_Name" />
+            <!--TextBox Grid.Column="1" Grid.Row="1" Height="72" HorizontalAlignment="Left" Name="textBox2" Text="TextBox" VerticalAlignment="Top" Width="314" /-->
+          
+
+
+            <toolkit:ListPicker Grid.Column="1" Grid.Row="2"    Margin="13,6,11,0" MinHeight="66" Width="290" x:Name="Grade" Tap="Grade_Tap"/>
+            <!--TextBox Grid.Column="1" Grid.Row="2" Height="72" HorizontalAlignment="Left" Name="textBox3" Text="TextBox" VerticalAlignment="Top" Width="314" /-->
+            <!--这个才是真的，下面那行是假的 <TextBox Grid.Column="1" Grid.Row="5" Height="72" HorizontalAlignment="Left" x:Name="textBox_Phone" Text=" Enter Phone Number" VerticalAlignment="Top" Width="314" GotFocus="GF_Phone" LostFocus="LF_Phone">-->
+            <TextBox Grid.Column="1" Grid.Row="5" Height="72" HorizontalAlignment="Left" x:Name="textBox_Phone" Text="" VerticalAlignment="Top" Width="314" GotFocus="GF_Phone" LostFocus="LF_Phone">
+                <TextBox.InputScope>
+                    <InputScope >
+                        <InputScopeName NameValue="TelephoneNumber" />
+                    </InputScope>
+                </TextBox.InputScope>
+            </TextBox>
+            <TextBox Grid.Column="1" Grid.Row="6" Height="72" HorizontalAlignment="Left" x:Name="textBox_Email" Text="" VerticalAlignment="Top" Width="314" GotFocus="GF_Email" LostFocus="LF_Email">
+                <TextBox.InputScope>
+                    <InputScope >
+                        <InputScopeName NameValue="EmailNameOrAddress" />
+                    </InputScope>
+                </TextBox.InputScope>
+            </TextBox>
+            <Button Content="Save" Grid.Column="1" Grid.Row="7" Grid.RowSpan="2" Height="72" HorizontalAlignment="Left" Margin="136,0,0,0" x:Name="btn_Save" VerticalAlignment="Top" Width="178" Click="btnSave_Click" Background="#FFD2AA7A" />
+            <TextBlock Grid.Row="7" Height="67" HorizontalAlignment="Left" x:Name="Save_Status" Text="" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="278" />
+            <TextBlock Grid.Row="2" Height="138" HorizontalAlignment="Left" Name="textBlock_DetailShortDescription" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Grid.ColumnSpan="2" Grid.RowSpan="3" Margin="0,146,0,0" />
+        </Grid>
+    </Grid>
+ 
+    <!--演示 ApplicationBar 用法的示例代码-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="按钮 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="按钮 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="菜单项 1"/>
+                <shell:ApplicationBarMenuItem Text="菜单项 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
