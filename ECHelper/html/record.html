@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>homePage</title>
+    
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.0.6/css/ui-light.css" rel="stylesheet">
+    <script src="//Microsoft.WinJS.0.6/js/base.js"></script>
+    <script src="//Microsoft.WinJS.0.6/js/ui.js"></script>
+
+    <!-- Windows Live reference -->
+    <script type="text/javascript" src="ms-appx:///LiveSDKHTML//js/wl.js"></script>
+    
+    <link href="/css/default.css" rel="stylesheet">
+    <link href="/css/record.css" rel="stylesheet">
+    <script src="/js/ListItems.js"></script>
+    <script src="/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/js/jquery.timelinr-0.9.5.js" type="text/javascript"></script>
+    <script src="/js/record.js"></script>
+</head>
+<body>
+    <div id="rootGrid" class="fragment homepage">
+        <progress class="win-large" id="wait" style="display: none;"></progress>
+    <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Record</span>
+            </h1>
+	<div style="display:-ms-grid; -ms-grid-columns: 55fr 5fr 40fr; -ms-grid-rows: 1fr 1fr; -ms-grid-column:3; -ms-grid-row:1;-ms-grid-row-align:end;">
+		<div id="myName" class="Name" style="-ms-grid-row-align: end; -ms-grid-column-align: end; font-size:28px"></div>
+		<div id="signinbutton" style="-ms-grid-column: 1;-ms-grid-row: 2; -ms-grid-column-align: end; -ms-grid-row-align: end;"></div>
+		<div id="image" style="width:90px;height:90px;-ms-grid-column: 3;-ms-grid-row: 1;-ms-grid-row-span:2; -ms-grid-row-align: end;"></div>
+	</div>
+        </header>
+    <section aria-label="Main content" role="main" style="margin-left: 120px;">
+        <div id="mainFrame" style="display: -ms-grid;-ms-grid-rows: 5.2fr 1fr;-ms-grid-columns: 1fr 3fr;">
+            <div id="recordlist" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : RecordData.itemList.dataSource, tapBehavior: 'directSelect', layout: { type: WinJS.UI.ListLayout } }"></div>
+            <div id="timeline">
+                <ul id="dates"></ul>
+            </div>
+            <div style="-ms-grid-column: 2;display: -ms-grid;-ms-grid-rows: 80px 1fr;-ms-grid-columns: 3fr 2fr;">
+                <div>
+                <h2 id="mailMessageTitle" style="font-size: 22pt;"></h2>
+                <h4 id="mailMessageAuthor" style="font-size: 15pt;"></h4>
+                <h4 id="mailMessageTime" style="font-size: 15pt;"></h4>
+            </div>
+            <div style="-ms-grid-column: 2;">
+                <button id="playecgbutton" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'play', label:'Play'}"></button>
+            </div>
+            <div id="recordMessage" style="-ms-grid-row: 2;-ms-grid-column-span: 2;">
+                <div id="recordMessageBody"></div>
+                <div id="myECGCanvas" style="width: 800px;height: 355px;display: none;background-color:rgba(255, 255, 255, 1);">
+                    <div style="display: -ms-grid;-ms-grid-rows: 315px 1fr;">
+                        <canvas id="myECGPlay" width="860" height="436"></canvas>
+                        <input id="ECGSlid" type="range" min="1" max="100" step="any" style="width: 800px;-ms-grid-row: 2;" value="0"/>
+                        <div id="canvasclosebutton" style="background-image: url('/images/close.png');width: 40px;height: 40px;float: right;"></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    </div>
+	<div data-win-control="WinJS.UI.AppBar">
+        <button id="homebutton" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'home', id:'', label:'Home', onclick:null, section:'global'}"></button>
+		<button id="outpatientbutton" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'mail', id:'', label:'Outpatient', onclick:null, section:'global'}"></button>
+		<button id="emergencybutton" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'message', id:'', label:'Emergency', section:'global'}"></button>
+        <button id="recordbutton" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'list', id:'', label:'Record', onclick:null, section:'global'}"></button>
+        <button id="contactbutton" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'contact', id:'', label:'Contact', onclick:null, section:'global'}"></button>
+	</div>
+</body>
+</html>
