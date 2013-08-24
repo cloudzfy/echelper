@@ -1,0 +1,93 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="ECHelper2._0.diagnosisNagivation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot" Background="#FF86C489">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Height="27" Margin="0,0,-22,0" Source="title_bg.png" Stretch="Fill" VerticalAlignment="Top" d:LayoutOverrides="Height, VerticalMargin" RenderTransformOrigin="0.502,0.185"/>
+        <!--TitlePanel 包含应用程序的名称和页标题-->
+        <StackPanel x:Name="TitlePanel" Margin="12,0,0,28" Height="136">
+           
+            <TextBlock x:Name="ApplicationTitle" Text="ECHelper" Style="{StaticResource PhoneTextNormalStyle}" Height="30"/>
+            <TextBlock x:Name="PageTitle" Text="Diagnose" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - 在此处放置其他内容-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0"></Grid>
+        <Grid Height="607" HorizontalAlignment="Left" Margin="12,0,0,0" Name="grid1" VerticalAlignment="Top" Width="456" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="356" />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="0" />
+                <RowDefinition Height="0" />
+                <RowDefinition Height="0" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Image Grid.ColumnSpan="3" Margin="24,45,-8,36" Source="arrow.png" Stretch="Fill" Grid.Row="1"/>
+        	<Image Margin="24,24,-8,37" Grid.Row="2" Source="arrow.png" Stretch="Fill" Grid.ColumnSpan="3"/>
+            <Image Margin="24,24,-8,37" Grid.Row="3" Source="arrow.png" Stretch="Fill" Grid.ColumnSpan="3"/>
+            <TextBlock Height="100" x:Name="textBlock_PatientDescription" Text="  Patient Description" FontSize="45" VerticalAlignment="Top" Grid.ColumnSpan="3" Margin="-5,28,-24,0" Grid.Row="1" >
+                 <toolkit:GestureService.GestureListener>
+                <toolkit:GestureListener 
+                   Flick="GestureListenerFlick_PD"
+                    />
+            </toolkit:GestureService.GestureListener>
+            </TextBlock>
+            <TextBlock Grid.Row="2" Height="100" x:Name="textBlock_Medical_Records" FontSize="45" Text=" Medical Records" VerticalAlignment="Top" Grid.ColumnSpan="3" Margin="6,19,0,0" HorizontalAlignment="Left" Width="435">
+                <!--<Run Text="    Medical "/><Run Text="Re"/><Run Text="cords"/>-->
+                 <toolkit:GestureService.GestureListener>
+                <toolkit:GestureListener 
+                   Flick="GestureListenerFlick_RD"
+                    />
+            </toolkit:GestureService.GestureListener>
+            </TextBlock>
+            <Image Margin="24,6,8,8" Source="ECG_bg.jpg" Stretch="Fill" Grid.ColumnSpan="3" Tap="Tap_imecg" />
+            <TextBlock Grid.Column="1" Height="67" HorizontalAlignment="Left" Margin="87,75,0,0" Name="textBlock_Status" Text="Downloading" FontSize="45" VerticalAlignment="Top" Width="311" Tap="Tap_ECG" Grid.ColumnSpan="2"  />
+            <TextBlock Grid.Row="3" Height="100" HorizontalAlignment="Left" Margin="24,24,0,0" Name="textBlock_Diagnosis" Text="Give Diagnosis" FontSize="45" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="417" >
+                <toolkit:GestureService.GestureListener>
+                <toolkit:GestureListener 
+                   Flick="GestureListenerFlick_GD"
+                    />
+            </toolkit:GestureService.GestureListener>
+            </TextBlock>
+        </Grid>
+        
+
+    </Grid>
+ 
+    <!--演示 ApplicationBar 用法的示例代码-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="按钮 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="按钮 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="菜单项 1"/>
+                <shell:ApplicationBarMenuItem Text="菜单项 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
