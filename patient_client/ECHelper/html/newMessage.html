@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>homePage</title>
+    
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.0.6/css/ui-light.css" rel="stylesheet">
+    <script src="//Microsoft.WinJS.0.6/js/base.js"></script>
+    <script src="//Microsoft.WinJS.0.6/js/ui.js"></script>
+
+    <!-- Windows Live reference -->
+    <script type="text/javascript" src="ms-appx:///LiveSDKHTML//js/wl.js"></script>
+    
+    <link href="/css/default.css" rel="stylesheet">
+    <link href="/css/newMessage.css" rel="stylesheet">
+    <script src="/js/ListItems.js"></script>
+    <script src="/js/newMessage.js"></script>
+</head>
+<body>
+    <div id="rootGrid" class="fragment homepage">
+        <progress class="win-large" id="wait" style="display: none;"></progress>
+    <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">New</span>
+            </h1>
+	<div style="display:-ms-grid; -ms-grid-columns: 55fr 5fr 40fr; -ms-grid-rows: 1fr 1fr; -ms-grid-column:3; -ms-grid-row:1;-ms-grid-row-align:end;">
+		<div id="myName" class="Name" style="-ms-grid-row-align: end; -ms-grid-column-align: end; font-size:28px"></div>
+		<div id="signinbutton" style="-ms-grid-column: 1;-ms-grid-row: 2; -ms-grid-column-align: end; -ms-grid-row-align: end;"></div>
+		<div id="image" style="width:90px;height:90px;-ms-grid-column: 3;-ms-grid-row: 1;-ms-grid-row-span:2; -ms-grid-row-align: end;"></div>
+	</div>
+        </header>
+    <section id="mainframe" aria-label="Main content" role="main" style="margin-left: 120px;-ms-grid-columns: 2fr 5fr;display: -ms-grid;">>
+        <div id="mailHeader">
+            <div id="receiver">
+                <input id="myEmail" type="email" class="differentEmailInputStyle" />
+            </div>
+           <div id="doctorSelection" class="doctorSelectionN" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DoctorData.itemList.dataSource, tapBehavior: 'directSelect', layout: { type: WinJS.UI.ListLayout } }"></div>
+        </div>
+        <div id="msgframe">
+            <input type="text" id="mailTitle" />
+            <div id="mailController" class="noLabels">
+                <button id="addECGbutton" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'add'}"></button>
+                <button id="sendbutton" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'send'}"></button>
+                <button id="cancelbutton" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'cancel'}"></button>
+            </div>
+            <textarea id="mailMessage"></textarea>
+            </div>
+    </section>
+        <div id="myFilelist">
+        <div style="margin-left: 30px;margin-top: 20px;">
+            <h1>ECG List</h1>
+            <div id="fileSelection">
+             </div>
+          </div>
+    </div>
+    </div>
+</body>
+</html>
