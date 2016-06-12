@@ -14,7 +14,3 @@ Copyright (C) 2013 Nicefforts. All Rights Reserved.
 For more information about this project, please visit [HERE](https://github.com/cloudzfy/echelper/wiki).
 
 To find guide for using these code, please visit [HERE](https://github.com/cloudzfy/echelper/wiki/HOW-TO-Build-the-Source-Code).
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/cloudzfy/echelper/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
